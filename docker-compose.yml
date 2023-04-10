@@ -8,6 +8,7 @@ services:
             dockerfile: ./docker/nginx/Dockerfile
         ports:
             - 80:80
+            - 8000:8000
         volumes:
             - static_volume:/app/backend/backend/django_static
             - ./docker/nginx/production:/etc/nginx/conf.d
