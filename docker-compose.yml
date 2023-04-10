@@ -11,7 +11,7 @@ services:
             - 8000:8000
         volumes:
             - static_volume:/app/backend/backend/django_static
-            - media_volume:/home/app/backend/media
+            - media_volume:/app/backend/media
             - ./docker/nginx/production:/etc/nginx/conf.d
         depends_on:
             - backend
@@ -23,7 +23,7 @@ services:
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/backend/django_static
-            - media_volume:/home/app/backend/media
+            - media_volume:/app/backend/media
         expose:
             - 8000
 
