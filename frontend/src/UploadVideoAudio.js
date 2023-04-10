@@ -26,7 +26,7 @@ export default class UploadVideoAudio extends React.Component<any, any> {
             method: 'POST',
             body: formData,
         }).then(response => response.json())
-            .then((data) => document.getElementById('show-file').innerHTML = `<video width=100% controls key=${data.url}>`+
+            .then((data) => document.getElementById('show-file').innerHTML = `<video width=100% controls autoplay key=${data.url}>`+
                         `<source src=${data.url} /> `  +
                         "</video>"  );
     };
