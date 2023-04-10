@@ -1,4 +1,5 @@
 import React from 'react';
+import { baseURL } from './global';
 
 export default class UploadVideoAudio extends React.Component<any, any> {
     constructor(props: any) {
@@ -21,7 +22,7 @@ export default class UploadVideoAudio extends React.Component<any, any> {
         const formData = new FormData();
         const { selectedFile } = this.state;
         formData.append("url", selectedFile);
-        fetch('http://127.0.0.1:8000/api/uploads/', {
+        fetch(baseURL + '/api/uploads/', {
             method: 'POST',
             body: formData,
         }).then(response => response.json())

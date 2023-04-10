@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Upload from './Upload.js';
 import UploadVideoAudio from './UploadVideoAudio.js';
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { baseURL } from './global';
 
 class App extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
 
     async componentDidMount() {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/uploads/');
+        const res = await fetch(baseURL + '/api/uploads/');
         const uploads = await res.json();
         this.setState({
           uploads
